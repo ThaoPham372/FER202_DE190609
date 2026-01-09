@@ -1,8 +1,12 @@
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import StudentList from './components/StudentList.jsx';
 
 function App() {
-  return <StudentList />;
+  return (
+    <div>
+      <StudentList />
+    </div>
+  );
 }
 
 export default App;
