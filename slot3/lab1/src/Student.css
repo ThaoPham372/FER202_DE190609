@@ -1,0 +1,14 @@
+.student-card {
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.student-card-img {
+  height: 260px;
+  object-fit: cover;
+}
+
+.student-card-text {
+  line-height: 1.8;
+}

@@ -1,20 +1,18 @@
 import { Card } from 'react-bootstrap';
+import './Student.css';
 
 function Student({ student }) {
   return (
-    <Card
-      className="h-100 shadow-sm border-0"
-      style={{ borderRadius: '12px', overflow: 'hidden', width: '100%' }}
-    >
+    <Card className="student-card h-100 shadow-sm border-0">
       <Card.Img
         variant="top"
         src={student.avatar}
         alt={`${student.name} avatar`}
-        style={{ height: '260px', objectFit: 'cover' }}
+        className="student-card-img"
       />
       <Card.Body>
         <Card.Title className="mb-3">{student.name}</Card.Title>
-        <Card.Text className="mb-0" style={{ lineHeight: '1.8' }}>
+        <Card.Text className="student-card-text mb-0">
           <div>
             <strong>ID:</strong> {student.id}
           </div>
