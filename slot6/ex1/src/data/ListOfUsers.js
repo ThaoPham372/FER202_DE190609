@@ -1,0 +1,48 @@
+export const ListOfUsers = [
+  {
+    id: 'DE190609',
+    name: 'Thao Pham',
+    email: 'thao.pham@enterprise.com',
+    role: 'Student',
+    status: 'ACTIVE',
+    statusType: 'success',
+    avatarUrl: 'https://i.pravatar.cc/60?img=1',
+  },
+  {
+    id: 'DE190610',
+    name: 'Be Rom',
+    email: 'j.smith@corporate.net',
+    role: 'DevOps',
+    status: 'PENDING',
+    statusType: 'warning',
+    avatarUrl: 'https://i.pravatar.cc/60?img=2',
+  },
+  {
+    id: 'E-103',
+    name: 'Alex Johnson',
+    email: 'alex.j@web.io',
+    role: 'Analyst',
+    status: 'LOCKED',
+    statusType: 'danger',
+    avatarUrl: 'https://i.pravatar.cc/60?img=3',
+  },
+  {
+    id: 'E-104',
+    name: 'Sarah Williams',
+    email: 'sarah.w@design.net',
+    role: 'Designer',
+    status: 'ACTIVE',
+    statusType: 'success',
+    avatarUrl: 'https://i.pravatar.cc/60?img=4',
+  },
+  {
+    id: 'E-105',
+    name: 'Michael Brown',
+    email: 'm.brown@tech-flow.com',
+    role: 'Billing Admin',
+    status: 'PENDING',
+    statusType: 'warning',
+    avatarUrl: 'https://i.pravatar.cc/60?img=5',
+  },
+]
+
