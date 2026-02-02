@@ -5,6 +5,10 @@ import QuantityController from './components/QuantityController'
 import OrderProcessingModal from './components/OrderProcessingModal'
 import ProductForm from './components/ProductForm'
 import TodoList from './components/TodoList'
+import QuantityController2 from './components/QuantityController2'
+import OrderProcessingModal2 from './components/OrderProcessingModal2'
+import ProductForm2 from './components/ProductForm2'
+import TodoList2 from './components/TodoList2'
 import './App.css'
 
 function Exercise1() {
@@ -47,6 +51,46 @@ function Exercise4() {
   )
 }
 
+function Exercise5() {
+  return (
+    <Container className="mt-4 mb-5">
+      <h2>Exercise 5: Quantity Controller (useReducer)</h2>
+      <p className="lead">Chỉnh sửa số lượng sản phẩm với input và nút +/- sử dụng useReducer</p>
+      <QuantityController2 />
+    </Container>
+  )
+}
+
+function Exercise6() {
+  return (
+    <Container className="mt-4 mb-5">
+      <h2>Exercise 6: Order Processing Modal (useReducer)</h2>
+      <p className="lead">Modal xác nhận xử lý đơn hàng sử dụng useReducer</p>
+      <OrderProcessingModal2 />
+    </Container>
+  )
+}
+
+function Exercise7() {
+  return (
+    <Container className="mt-4 mb-5">
+      <h2>Exercise 7: Product Form (useReducer)</h2>
+      <p className="lead">Form thêm sản phẩm sử dụng useReducer với object state</p>
+      <ProductForm2 />
+    </Container>
+  )
+}
+
+function Exercise8() {
+  return (
+    <Container className="mt-4 mb-5">
+      <h2>Exercise 8: Todo List (useReducer)</h2>
+      <p className="lead">Danh sách công việc với chức năng thêm và xóa sử dụng useReducer</p>
+      <TodoList2 />
+    </Container>
+  )
+}
+
 function Home() {
   return (
     <Container className="mt-5 mb-5 text-center">
@@ -68,6 +112,10 @@ function App() {
         <Route path="/exercise2" element={<Exercise2 />} />
         <Route path="/exercise3" element={<Exercise3 />} />
         <Route path="/exercise4" element={<Exercise4 />} />
+        <Route path="/exercise5" element={<Exercise5 />} />
+        <Route path="/exercise6" element={<Exercise6 />} />
+        <Route path="/exercise7" element={<Exercise7 />} />
+        <Route path="/exercise8" element={<Exercise8 />} />
       </Routes>
     </BrowserRouter>
   )

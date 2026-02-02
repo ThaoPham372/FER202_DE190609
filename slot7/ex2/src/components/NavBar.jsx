@@ -1,4 +1,4 @@
-import { Navbar, Nav, Container } from 'react-bootstrap'
+import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
 
 export default function NavBar() {
@@ -22,6 +22,18 @@ export default function NavBar() {
             </Nav.Link>
             <Nav.Link as={Link} to="/exercise4" active={location.pathname === '/exercise4'}>
               Exercise 4
+            </Nav.Link>
+            <Nav.Link as={Link} to="/exercise5" active={location.pathname === '/exercise5'}>
+              Exercise 5
+            </Nav.Link>
+            <Nav.Link as={Link} to="/exercise6" active={location.pathname === '/exercise6'}>
+              Exercise 6
+            </Nav.Link>
+            <Nav.Link as={Link} to="/exercise7" active={location.pathname === '/exercise7'}>
+              Exercise 7
+            </Nav.Link>
+            <Nav.Link as={Link} to="/exercise8" active={location.pathname === '/exercise8'}>
+              Exercise 8
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
