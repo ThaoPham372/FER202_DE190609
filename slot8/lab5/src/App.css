@@ -1,0 +1,131 @@
+#root {
+  min-height: 100vh;
+}
+
+.app-main {
+  padding-bottom: 48px;
+}
+
+.app-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.app-carousel {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.12);
+  background: #111827;
+}
+
+.app-carousel__img {
+  height: clamp(220px, 38vw, 420px);
+  object-fit: cover;
+}
+
+.app-carousel .carousel-caption {
+  left: 7%;
+  right: 7%;
+  bottom: 1.25rem;
+  text-align: left;
+}
+
+.app-carousel .carousel-caption > * {
+  display: inline-block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(17, 24, 39, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+.app-carousel .carousel-caption h3 {
+  margin: 0 0 4px;
+  font-weight: 700;
+}
+
+.app-carousel .carousel-caption p {
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* News page */
+.news-page {
+  padding-bottom: 12px;
+}
+
+.news-hero {
+  margin-top: 8px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #111827, #1f2937);
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.18);
+}
+
+.news-hero__inner {
+  padding: 28px 8px;
+}
+
+.news-hero__title {
+  margin: 0;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(28px, 3.5vw, 42px);
+}
+
+.news-hero__sub {
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 60ch;
+}
+
+.news-card {
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(17, 24, 39, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(17, 24, 39, 0.14);
+}
+
+.news-card__media {
+  height: 190px;
+  background: #111827;
+}
+
+.news-card__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.news-card__body {
+  padding: 16px 16px 18px;
+}
+
+.news-card__title {
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-card__desc {
+  margin: 0;
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
