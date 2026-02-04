@@ -18,6 +18,9 @@ function NavBarPizza() {
             <Nav.Link as={NavLink} to="/news">
               News
             </Nav.Link>
+            <Nav.Link as={NavLink} to="/quiz">
+              Quiz
+            </Nav.Link>
             <Nav.Link as={NavLink} to="/register">
               Đăng Ký Form
             </Nav.Link>

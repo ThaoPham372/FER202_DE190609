@@ -9,6 +9,7 @@ import NavBarPizza from './components/NavBarPizza';
 import { ToastProvider } from './context/ToastContext';
 import ContactPage from './pages/ContactPage';
 import NewPage from './pages/NewPage';
+import QuizPage from './pages/QuizPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/news" element={<NewPage />} />
+              <Route path="/quiz" element={<QuizPage />} />
               <Route path="/register" element={<DangKyForm />} />
               <Route path="/contact" element={<ContactPage />} />
             </Routes>
