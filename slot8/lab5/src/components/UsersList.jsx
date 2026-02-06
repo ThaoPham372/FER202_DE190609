@@ -21,7 +21,7 @@ function UsersList() {
     } catch (err) {
       if (isMounted) {
         const networkMsg = !navigator.onLine
-          ? `No internet connection. Please check your Wi‑Fi / network. Details: ${err.message}`
+          ? 'No internet connection. Please check your Wi‑Fi / network.'
           : err.message;
         setError(networkMsg);
       }
