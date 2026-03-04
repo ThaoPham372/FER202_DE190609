@@ -1,0 +1,125 @@
+/* ── Login page ───────────────────────────────────────── */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e8edf5 0%, #dce6f5 100%);
+  padding: 1rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.login-card .card-header {
+  background: #fff;
+  border-bottom: 1px solid #e9ecef;
+  padding: 1.25rem 1.75rem;
+}
+
+.login-card .card-header h4 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #212529;
+}
+
+.login-card .card-body {
+  background: #fff;
+  padding: 1.75rem;
+}
+
+.login-card .card-footer {
+  background: #fff;
+  border-top: 1px solid #e9ecef;
+  padding: 0.9rem 1.75rem;
+  font-size: 0.875rem;
+}
+
+/* ── Account list page ────────────────────────────────── */
+.list-wrapper {
+  min-height: 100vh;
+  background: #f0f2f5;
+  padding: 2rem 1rem;
+}
+
+.list-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 1.75rem;
+}
+
+.list-inner thead th {
+  font-weight: 600;
+  background: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  white-space: nowrap;
+}
+
+.list-inner tbody tr:hover {
+  background-color: #f8f9fb;
+}
+
+/* ── Account detail page ──────────────────────────────── */
+.detail-wrapper {
+  min-height: 100vh;
+  background: #f0f2f5;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+}
+
+.detail-card {
+  width: 100%;
+  max-width: 540px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.detail-card .card-header {
+  background: #fff;
+  border-bottom: 1px solid #e9ecef;
+  padding: 1rem 1.5rem;
+}
+
+.detail-card .card-header h5 {
+  font-weight: 700;
+  color: #212529;
+}
+
+.detail-card .card-body {
+  background: #fff;
+  padding: 1.75rem;
+}
+
+.detail-info-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6c757d;
+  margin-bottom: 2px;
+}
+
+.detail-info-value {
+  font-size: 1rem;
+  color: #212529;
+  margin-bottom: 1rem;
+}
+
+.detail-card .card-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  padding: 1rem 1.5rem;
+}
