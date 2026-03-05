@@ -1,3 +1,39 @@
+/* ── App navbar ───────────────────────────────────────── */
+.app-navbar {
+  background: linear-gradient(120deg, #212529 0%, #2b3035 45%, #495057 100%) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  padding-block: 0.45rem;
+}
+
+.app-navbar-logo {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: 0.98rem;
+  text-transform: uppercase;
+}
+
+.app-navbar-user {
+  color: #f8f9fa;
+}
+
+.app-navbar-avatar {
+  border: 2px solid #f8f9fa;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
+}
+
+.app-navbar-username {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f8f9fa;
+}
+
+.app-navbar-role {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #ffc107;
+}
+
 /* ── Login page ───────────────────────────────────────── */
 .login-wrapper {
   min-height: 100vh;

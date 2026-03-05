@@ -1,4 +1,4 @@
-uoconst BASE_URL = 'http://localhost:3001';
+const BASE_URL = 'http://localhost:3000';
 
 export const getAccounts = async () => {
   const res = await fetch(`${BASE_URL}/accounts`);
