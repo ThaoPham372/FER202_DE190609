@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "thao_univ",
+      "password": "password123",
+      "fullName": "Thảo Nguyễn"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Hoàn thành Lab 2",
+      "status": "Todo",
+      "deadline": "2026-03-15",
+      "id": "1"
+    },
+    {
+      "title": "Học Toeic",
+      "status": "In Progress",
+      "deadline": "2026-03-20",
+      "id": "2"
+    },
+    {
+      "title": "Học Code",
+      "status": "Todo",
+      "deadline": "2026-04-20",
+      "id": "3"
+    },
+    {
+      "title": "Học Võ",
+      "status": "In Progress",
+      "deadline": "2026-07-20",
+      "id": "4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,0 +1,169 @@
+Bước 1: Tạo Project: Mở Terminal tại thư mục bạn muốn lưu bài và chạy lệnh:
+cd ...
+npx create-react-app fer202-05
+
+
+Bước 2: Cài đặt thư viện: Di chuyển vào thư mục dự án (cd fer202-02) và cài các gói cần thiết:
+npm install react-bootstrap bootstrap axios react-router-dom
+
+
+Bước 3: Thiết lập dữ liệu (JSON Server):
+Copy file db.json từ đề bài vào thư mục gốc của project.
+Mở một Terminal mới và chạy lệnh để tạo API ảo:
+npm install -g json-server
+npx json-server db.json --port 3001
+
+
+Bước 4: Cấu trúc thư mục: Trong thư mục src, bạn tạo các folder sau để quản lý code khoa học:
+components : Chứa các thành phần giao diện nhỏ (Form, Table)
+pages : Chứa các trang lớn như Login, Home
+contexts : Chứa file quản lý trạng thái đăng nhập (AuthContext.jsx)
+services : Chứa file gọi API (AuthAPI.js)
+routes : Chứa file bảo mật đường dẫn (ProtectedRoute.jsx)
+
+
+2. Luồng hoạt động của ứng dụng (Luồng đi của Code)
+Để bạn dễ hình dung "file nào gọi file nào", hãy nhìn vào sơ đồ logic sau:
+
+App.js: Là trái tim, bao bọc toàn bộ ứng dụng bằng AuthProvider (để chia sẻ dữ liệu đăng nhập) và BrowserRouter (để điều hướng trang).
+
+AuthContext.jsx: Nơi lưu trữ "trạng thái" (ai đang đăng nhập? đã đăng nhập chưa?).
+
+AuthAPI.js: Nơi thực hiện các lệnh gọi đến JSON Server để kiểm tra tài khoản.
+
+ProtectedRoute.jsx: "Người gác cổng", nếu chưa đăng nhập mà vào trang chủ thì nó sẽ đá bạn về trang /login
+
+
+Nhúng Bootstrap vào ứng dụng
+
+Để giao diện đẹp như hình mẫu trong đề , bạn mở file src/index.js (hoặc App.js) và thêm dòng này vào trên cùng
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+Dưới đây là 3 bước tiếp theo để hoàn thiện hệ thống đăng nhập bảo mật:
+Bước 1: Tạo hàm gọi API (src/services/AuthAPI.js)
+
+
+
+Dựa vào cấu trúc cực kì chuẩn chỉnh của TestPE\fer202-02, bạn hoàn toàn có thể dùng nó làm một Boilerplate/Template cho mọi bài thi PE liên quan đến CRUD & Login.
+
+Dưới đây là danh sách phân loại chi tiết những file bạn Copy y nguyên 100%, những file sửa nhẹ API/Text và những file lấy cái sườn rồi thay Data.
+
+Mức độ 1: COPY Y NGUYÊN 100% (Không cần sửa một chữ nào)
+Đây là các file xử lý logic nền (Authentication, Routing, UI Components động) cực kì đa dụng, đề nào cũng xài.
+
+src/routes/ProtectedRoute.jsx: Logic chặn truy cập khi chưa đăng nhập. Nó chỉ đọc biến isAuthenticated nên dùng cho dự án nào cũng đúng.
+src/contexts/AuthContext.jsx: Trạm trung chuyển Reducer/State cho việc đăng nhập (quản lý trạng thái { isAuthenticated, user, loading, error }). Chuẩn không cần chỉnh.
+src/components/ConfirmModal.jsx: Modal Bootstrap rất linh hoạt, dùng làm hộp thoại Xóa hoặc hộp thoại Thông báo Thành công chỉ bằng cách truyền props xuống.
+src/components/StatusAlert.jsx: Cục Alert hiện thông báo góc màn hình rồi tự tắt.
+src/services/formatUtils.js: File này chứa các hàm support định dạng (format tiền tệ, format ngày tháng). Rất tiện.
+src/index.js & src/index.css: Không có gì can thiệp đến nghiệp vụ bài toán.
+
+Mức độ 2: COPY ĐƯỢC NHƯNG CẦN SỬA KHOẢNG 10-20%
+Dùng lại bộ Source Code, nhưng sẽ đổi URL db.json, đổi tiêu đề của App cho khớp với Đề.
+
+src/App.js: Bạn copy nguyên bộ khung Router siêu chuẩn này. Cần làm 2 việc:
+Sửa import: Đổi mảng Context theo đề bài. Ví dụ từ <ExpenseProvider> thành <ProductProvider>.
+Giữ nguyên toàn bộ khung <AuthProvider> <BrowserRouter> <Route...>....
+src/services/AuthAPI.js: Logic hàm loginAction().
+Cần sửa: Sửa duy nhất cái URL trong call Axios. (Ví dụ đề cho tài khoản ở http://localhost:9999/accounts thì sửa text đó lại). Các logic bắt mảng accounts[0], check mật khẩu thì giữ nguyên.
+src/components/LoginForm.jsx: Form login xịn xò đã gắn chuẩn API, báo lỗi, điều hướng.
+Cần sửa: Dòng message="Welcome back to PersonalBudget." sửa lại câu thông báo theo yêu cầu Đề.
+src/components/Header.jsx / Footer.jsx: Cấu trúc thanh điều hướng Navbar.
+Cần sửa: Tên Ứng dụng ở góc trái màn hình (chữ Navbar.Brand), sửa các mục Link (vd thay "Expenses" thành "Manage Patients").
+
+Mức độ 3: COPY BỘ KHUNG & CẤU TRÚC (Sửa Data 50% - 80%)
+Đây là các file liên quan trực tiếp đến Data Schema (Cơ sở dữ liệu JSON: Thống kê sinh viên, Quản lý sách, Chi tiêu...) của từng đề cụ thể.
+
+src/contexts/ExpenseContext.jsx -> Đổi thành Ví dụ: PatientContext.jsx
+Giữ lại: Khung Reducer siêu gọn: các case FETCH_SUCCESS, ADD_SUCCESS, UPDATE_SUCCESS, DELETE_SUCCESS.
+Cần sửa: Các biến Initial State nếu bài yêu cầu phức tạp (nhưng thường là y hệt) và Đổi tên Provider component.
+src/services/ExpenseAPI.js -> Đổi thành Ví dụ: PatientAPI.js
+Giữ lại: Toàn bộ cấu trúc chia 4 hàm fetch...Action(), add...Action(), update...(), delete...(). Nó đã try catch và dispatch chuẩn chỉ.
+Cần sửa: Hàm Axios đường dẫn API URL gọi json-server (thay đổi chữ /expenses thành /patients...).
+src/pages/Home.jsx (Hoặc trang ManageXXX.jsx)
+Giữ lại: State của bộ Lọc filter, State Modal xóa, Component <Table>, State isEditing, Cấu trúc layout màn hình cột trái/cột phải.
+Cần sửa:
+Tên các cột trong <thead> của cái Bảng (thêm bớt bao nhiêu cột thì Table đổi bấy nhiêu <tr>, <td>).
+Các <input> trong Form thêm mới / Sửa (đề cho thuộc tính title, author, year thì phải đổi onChange cho khớp với State thay vì name, amount, category).
+🛠 Lời khuyên "thực chiến" khi thi:
+Bạn nén folder source code fer202-02 này lại thành 1 file zip. Khi vô phòng thi/bắt đầu code:
+
+Bạn giải nén source file này ra.
+Bạn đổi tên <Expense...> thành từ khoá tiếng anh của đề bài bằng lệnh Find and Replace All nếu IDE cho phép (nhưng thận trọng kẻo hỏng).
+Đọc kĩ file db.json mới để sửa Component Form (thêm thẻ Label/Input mới) và Data Table (thêm thẻ <th> <td> mới).
+Sửa Link các hàm Service API cho chính xác localhost:xxxx/<tên-bảng>.
+Đảm bảo bạn tiết kiệm được 1 tiếng đồng hồ gõ lại mấy cái linh tinh, mà lại ít bug!
+
+
+1. Khai báo "Hồn" của Form (State)
+Đây là nơi lưu trữ những gì người dùng đang gõ.
+
+Khi đi thi: Đề bài bảo Patient có "Name, Age, Address" thì bạn thêm các trường đó vào object này.
+javascript
+// [NOTE]: Khai báo các ô nhập liệu của Form tại đây
+const [formData, setFormData] = useState({
+  name: '',    // Đề cho trường gì thì viết tên trường đó vào đây
+  age: '',
+  gender: '',
+  address: '',
+});
+// [NOTE]: Trạng thái Sửa (isEditing) 
+// Dùng để biết đang bấm nút "Add" hay nút "Edit"
+const [isEditing, setIsEditing] = useState(false);
+const [currentId, setCurrentId] = useState(null);
+2. Thiết kế "Xác" của Form (Giao diện Bootstrap)
+Bạn dùng bộ 3: Form.Group (Nhóm), Form.Label (Tên ô), Form.Control (Ô nhập).
+
+javascript
+/* [NOTE]: Quy tắc thiết kế một ô nhập liệu chuẩn */
+<Form.Group className="mb-3">
+  {/* 1. Nhãn tên của ô (vd: Age, Price...) */}
+  <Form.Label className="small">Age</Form.Label>
+  
+  {/* 2. Ô nhập liệu thực tế */}
+  <Form.Control
+    type="number" // Đề bảo nhập số thì dùng 'number', chữ dùng 'text', ngày dùng 'date'
+    value={formData.age} // Link (móc) giá trị vào State ở Phần 1
+    
+    /* 3. QUAN TRỌNG: Cập nhật State khi gõ */
+    onChange={(e) =>
+      setFormData({ ...formData, age: e.target.value })
+    }
+  />
+</Form.Group>
+3. Xử lý "Dòng chảy" dữ liệu (Submit & Reset)
+Đây là nơi bạn gửi dữ liệu đi hoặc xoá trắng Form.
+
+javascript
+// [NOTE]: Hàm Xoá trắng Form - Thường dùng sau khi thêm xong hoặc bấm nút Reset
+const handleReset = () => {
+  setFormData({ name: '', age: '', gender: '', address: '' });
+  setIsEditing(false); // Đưa về trạng thái Add mới
+};
+// [NOTE]: Hàm Gửi dữ liệu (Submit)
+const handleSubmit = async (e) => {
+  e.preventDefault(); // CHẶN Load lại trang (bắt buộc)
+  if (isEditing) {
+    // Nếu đang sửa -> Gọi hàm Update
+    await updatePatientAction(dispatch, currentId, formData);
+  } else {
+    // Nếu đang thêm mới -> Gọi hàm Add
+    await addPatientAction(dispatch, formData);
+  }
+  
+  handleReset(); // Xoá trắng form sau khi làm xong
+};
+4. Mẹo "Layout" (Cách sắp xếp Form)
+Tùy theo đề bài yêu cầu "Form một cột" hay "Form chia đôi màn hình":
+
+Dạng 2 cột (Như bài 01): Dùng <Row> <Col md={4}> Form </Col> <Col md={8}> Table </Col> </Row>. (Thích hợp khi Form ngắn, ít trường dữ liệu).
+
+Dạng 1 cột chồng (Như bài 02/03): Không dùng Col hoặc để Col md={12}. (Thích hợp khi Form dài, nhiều trường dữ liệu, muốn nhìn thoáng).
+
+🚩 Checklist khi gặp bài mới:
+Bước 1: Đề cho bao nhiêu trường? (Ví dụ: 3 trường Title, Budget, Date).
+Bước 2: Sửa initialState trong Context và useState trong Home tương ứng 3 trường đó.
+Bước 3: Copy-paste các đoạn <Form.Group> và sửa Form.Label + onChange theo tên trường mới.
+Bước 4: Sửa các cột <th> / <td> của Table cho khớp.
+Ghi chú vàng: Hãy luôn giữ hàm ...formData trong onChange (phần có dấu 3 chấm). Nó giúp React giữ lại các ô khác khi bạn đang gõ vào một ô duy nhất. Nếu thiếu dấu 3 chấm này, các ô kia sẽ biến mất đấy!

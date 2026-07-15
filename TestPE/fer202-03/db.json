@@ -1,0 +1,33 @@
+{
+  "patients": [
+    {
+      "id": "3",
+      "name": "Hoàng Văn Thạch",
+      "age": 26,
+      "gender": "Male",
+      "address": "Thừa Thiên Huế"
+    },
+    {
+      "id": "c9ca",
+      "name": "Cao Thị Miên",
+      "age": "20",
+      "gender": "Female",
+      "address": "Đà Nẵng"
+    },
+    {
+      "id": "45df",
+      "name": "Nguyễn Thị Thập",
+      "age": "32",
+      "gender": "Female",
+      "address": "Quảng Nam"
+    },
+    {
+      "id": "157b",
+      "name": "Thao Pham Cute",
+      "age": "21",
+      "gender": "Femail",
+      "address": "Đà Nẵng City"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

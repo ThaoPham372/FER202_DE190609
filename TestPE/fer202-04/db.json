@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin123",
+      "fullName": "Administrator",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "student1",
+      "password": "123456",
+      "fullName": "Student One",
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "username": "user01",
+      "password": "password1",
+      "fullName": "User 01",
+      "role": "user"
+    }
+  ],
+  "motorbikes": [
+    {
+      "id": "1",
+      "title": "Piaggio Liberty ABS",
+      "year": 2020,
+      "price": 1800,
+      "stock": 7,
+      "image": "/images/motor1.jpg",
+      "description": "Sport underbone motorbike suitable for city riding and daily commuting."
+    },
+    {
+      "id": "2",
+      "title": "Honda Air Blade 125cc",
+      "year": 2021,
+      "price": 1500,
+      "stock": 10,
+      "image": "/images/motor2.jpg",
+      "description": "Popular scooter with modern design and fuel efficiency."
+    },
+    {
+      "id": "3",
+      "title": "Yamaha Exciter 155cc",
+      "year": 2022,
+      "price": 1900,
+      "stock": 3,
+      "image": "/images/motor3.jpg",
+      "description": "High-performance sport underbone with advanced features."
+    },
+    {
+      "id": "4",
+      "title": "Suzuki Satria F150",
+      "year": 2019,
+      "price": 1700,
+      "stock": 6,
+      "image": "/images/motor4.jpg",
+      "description": "Lightweight and agile motorbike ideal for urban environments."
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

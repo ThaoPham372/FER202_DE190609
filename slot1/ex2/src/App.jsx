@@ -1,11 +1,15 @@
+import { useState } from 'react';
 import './App.css';
 import reactLogo from './assets/23.jpg';
+
 
 function App() {
   return (
     <>
       <div>
-        <img src={reactLogo} className="logo react" alt="Image" />
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
       </div>
       <h1>Hi Guys !!!</h1>
       <div className="card">

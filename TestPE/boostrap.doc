@@ -1,0 +1,139 @@
+Để hiểu Bootstrap một cách dễ nhất mà không bị rối, bạn hãy tưởng tượng việc xây dựng giao diện giống như việc xếp những chiếc hộp (Box) lồng vào nhau.
+
+Có 3 cấp độ "hộp" quan trọng nhất mà bạn cần nhớ:
+
+Cấp độ 1: <Container> (Cái Sân)
+Nó giống như cái sân chơi của bạn. Nếu không có nó, các chữ sẽ bị dính sát vào mép màn hình rất xấu.
+
+Tác dụng: Giúp căn giữa nội dung và tạo khoảng trống hai bên lề.
+Cách dùng: Luôn bọc toàn bộ nội dung của trang trong một cái <Container>.
+Cấp độ 2: <Row> và <Col> (Chia nền nhà)
+Đây là cách bạn chia màn hình ra. Hãy tưởng tượng chiều ngang màn hình luôn có 12 phần bằng nhau.
+
+<Row>: Là một hàng ngang (giống như 1 dòng kẻ trong vở).
+<Col md={6}>: Nghĩa là cái hộp này chiếm 6 phần (tức là nửa màn hình).
+<Col md={4}>: Nghĩa là cái hộp này chiếm 4 phần (tức là 1/3 màn hình).
+Cấp độ 3: <Form.Group> (Từng món đồ nội thất)
+Đây là cấu trúc của một ô nhập liệu độc lập. Bạn cứ copy-paste cái này cho mọi ô khác.
+
+Một cái Form đơn giản nhất sẽ gồm 3 lớp:
+
+<Form.Group>: Cái khung bảo vệ bên ngoài của một ô.
+<Form.Label>: Cái nhãn tên (vd: "Họ và tên").
+<Form.Control>: Cái ô trắng để người dùng gõ chữ vào.
+Ví dụ cái Form "Sơ sinh" siêu đơn giản:
+javascript
+<Container> {/* 1. Cái sân bao ngoài */}
+  <Row> {/* 2. Một cái hàng ngang */}
+    <Col md={6}> {/* 3. Chiếm nửa màn hình thôi */}
+    
+      <Form> {/* 4. Cái khung Form chính */}
+      
+        {/* --- Nhóm Input số 1 --- */}
+        <Form.Group className="mb-3"> {/* mb-3 là để tạo khoảng cách phía dưới (Margin Bottom) */}
+          <Form.Label>Tên bệnh nhân</Form.Label>
+          <Form.Control type="text" placeholder="Nhập tên..." />
+        </Form.Group>
+        {/* --- Nhóm Input số 2 --- */}
+        <Form.Group className="mb-3">
+          <Form.Label>Tuổi</Form.Label>
+          <Form.Control type="number" />
+        </Form.Group>
+        <Button variant="primary">Lưu</Button>
+      </Form>
+      
+    </Col>
+  </Row>
+</Container>
+🚩 Mẹo nhớ nhanh các kí hiệu "Lạ":
+mb-3, mb-4: Là Margin Bottom (Khoảng cách dưới). Số càng to thì khoảng trống càng rộng.
+fw-bold: Là Font Weight (In đậm).
+text-muted: Là làm cho chữ có màu xám nhạt (nhìn chuyên nghiệp hơn cho các cái Label).
+py-2: Là Padding Y (Khoảng cách đệm theo chiều dọc - trên dưới). Giúp cái nút bấm to và mập mạp hơn.
+Bạn cứ nhớ: Container -> Row -> Col -> Form.Group là "bất tử", đề nào cũng dùng đúng bộ khung này thôi!
+
+
+1. Cái Bảng dữ liệu (<Table>)
+Đi thi cứ dùng bộ 3 thuộc tính này là bảng trông sang xịn mịn ngay lập tức:
+
+javascript
+/* Mẹo: Bộ 3 "bất tử" cho Table */
+<Table 
+  striped     // 1. Kẻ sọc (dòng trắng dòng xám cho dễ nhìn)
+  hover       // 2. Rê chuột vào dòng nào dòng đó sáng lên
+  bordered    // 3. Có đường kẻ ô vuông vắn (như trong ảnh mẫu bạn gửi)
+  responsive  // 4. Tự co giãn nếu màn hình nhỏ (chống vỡ khung)
+  className="align-middle border-light shadow-sm" // aligns nội dung vào giữa ô
+>
+  ...
+</Table>
+2. Các màu sắc của Nút bấm và Thông báo (Variant)
+Bootstrap dùng chung một bộ từ khoá cho màu sắc. Bạn chỉ cần thuộc 5 cái tên này là dùng được cho cả Nút bấm (Button), Thông báo (
+
+Alert
+), Huy hiệu (Badge):
+
+primary: Xanh biển (Dùng cho nút Chính, nút Add).
+success: Xanh lá (Dùng cho nút Lưu, thông báo Thành công).
+warning: Vàng (Dùng cho nút Sửa - Edit).
+danger: Đỏ (Dùng cho nút Xoá - Delete, hoặc báo Lỗi).
+secondary: Xám (Dùng cho nút Làm mới - Reset hoặc nút Cancel).
+3. Cái Card (<Card>)
+Nếu đề bài yêu cầu "bo góc", "có đổ bóng", hoặc "chia khung rõ ràng" thì bạn dùng Card. Nó giúp giao diện không bị phẳng lì và nhàm chán.
+
+javascript
+<Card className="shadow-sm border-0"> {/* Shadow-sm tạo bóng mờ, Border-0 xóa viền đen */}
+  <Card.Header className="bg-white fw-bold">Tiêu đề khung</Card.Header>
+  <Card.Body>
+    Nội dung bên trong...
+  </Card.Body>
+</Card>
+💡 Mẹo nhỏ cho kì thi:
+Nếu bạn thấy khó nhớ các class (ví dụ fw-bold, mb-3), bạn hãy để ý quy tắc "Chữ cái đầu":
+
+f = Font (vd: fw = font weight, fs = font size)
+m = Margin (vd: mt = top, mb = bottom, ms = start/trái, 
+
+me
+ = end/phải)
+p = Padding (tương tự như margin nhưng là khoảng đệm bên trong)
+t = Text (vd: text-center, text-danger)_
+
+
+{/* PHẦN LƯỚI DANH SÁCH (CARD GRID) */}
+<Row xs={1} md={2} lg={4} className="g-4 mt-2">
+  {/* [GHI CHÚ]: xs=1 (di động 1 cột), lg=4 (máy tính 4 cột) */}
+  {sortedItems.map((item) => (
+    <Col key={item.id}>
+      <Card className="h-100 shadow-sm border-light">
+        {/* 1. Hình ảnh xe */}
+        <Card.Img 
+          variant="top" 
+          src={item.image} 
+          style={{ height: '180px', objectFit: 'cover' }}
+          onError={(e) => e.target.src = 'https://via.placeholder.com/180x150?text=No+Image'}
+        />
+        
+        <Card.Body className="d-flex flex-column">
+          {/* 2. Thông tin chi tiết */}
+          <Card.Title className="fw-bold fs-5 mb-2">{item.title}</Card.Title>
+          <div className="small text-muted mb-3">
+            <p className="mb-1"><strong>Year:</strong> {item.year}</p>
+            <p className="mb-1"><strong>Price:</strong> ${item.price}</p>
+            <p className="mb-0"><strong>Stock:</strong> {item.stock}</p>
+          </div>
+
+          {/* 3. Cặp nút bấm ở cuối Card */}
+          <div className="mt-auto d-flex gap-2">
+            <Button variant="primary" className="w-100 btn-sm py-2">
+              View Details
+            </Button>
+            <Button variant="success" className="w-100 btn-sm py-2">
+              Add to Cart
+            </Button>
+          </div>
+        </Card.Body>
+      </Card>
+    </Col>
+  ))}
+</Row>

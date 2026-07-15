@@ -1,0 +1,32 @@
+{
+  "patients": [
+    {
+      "id": "2",
+      "name": "Trần Thị Vân Anh",
+      "age": 25,
+      "gender": "Female",
+      "address": "Thừa Thiên Huế"
+    },
+    {
+      "id": "3",
+      "name": "Hoàng Văn Thạch",
+      "age": 26,
+      "gender": "Male",
+      "address": "Thừa Thiên Huế"
+    },
+    {
+      "id": "c9ca",
+      "name": "Cao Thị Miên",
+      "age": "20",
+      "gender": "Female",
+      "address": "Đà Nẵng"
+    },
+    {
+      "id": "45df",
+      "name": "Nguyễn Thị Thập",
+      "age": "32",
+      "gender": "Female",
+      "address": "Quảng Nam"
+    }
+  ]
+}
